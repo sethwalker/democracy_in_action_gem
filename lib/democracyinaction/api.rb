@@ -179,7 +179,7 @@ module DemocracyInAction
     # value is either key in that table, or Array of keys in that table
     # return an Array of values that can be added to a query string
     def linkHashToQueryStringArray(links)
-      if !links || (links.class != Hash) then
+      if !links || !links.is_a?(Hash) then
         raise(StandardError,"bad links value")
       end
 
