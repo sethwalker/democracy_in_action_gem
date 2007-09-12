@@ -1,5 +1,5 @@
 require 'rexml/streamlistener'
-require 'rexml/document'
+#require 'rexml/document'
 
 include REXML
 
