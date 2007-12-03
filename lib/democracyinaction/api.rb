@@ -214,6 +214,10 @@ module DemocracyInAction
     # specialized code to handle multiple form entries with same key name
     # also does some error handling
     def sendRequest(my_url, options, redirects = 5)
+      if not DIA_ENABLED
+        return Net::HTTP.new( 'www.radicaldesigns.org', 80 ).start {|http| http.request( Net::HTTP::Get.new('/'))}
+      end
+            
       # make a HTTP post and set the cookies
       url = URI.parse(my_url)
       req = Net::HTTP::Post.new(url.path)
